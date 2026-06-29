@@ -31,7 +31,7 @@ Acesse http://localhost:3000
 ## Buscar notícias (primeira vez)
 
 Acesse no browser:
-  http://localhost:3000/api/fetch-news?secret=guiman2024
+  http://localhost:3000/api/fetch-news?secret=${SECRET_KEY}
 
 Isso popula o banco com notícias dos feeds RSS configurados.
 
