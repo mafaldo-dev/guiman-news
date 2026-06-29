@@ -2,7 +2,7 @@
   "crons": [
     {
       "path": "/api/fetch-news?secret=${process.env.SECRET_KEY}",
-      "schedule": "0 * * * *"
+      "schedule": "0 0 * * *"
     }
   ]
 }

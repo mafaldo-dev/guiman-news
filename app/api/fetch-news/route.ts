@@ -6,7 +6,7 @@ import { randomUUID } from "crypto";
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const secret = searchParams.get("secret");
-  if (secret !== (process.env.CRON_SECRET || "guiman2024")) {
+  if (secret !== (process.env.SECRET_KEY)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
