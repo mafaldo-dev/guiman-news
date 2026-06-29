@@ -65,8 +65,6 @@ export function NewsFeed() {
 
   const featured = articles[0];
   const rest = articles.slice(1);
-  console.log(rest)
-
   const hasFilters = category !== "Todos" || date || sort !== "recent" || search;
 
   return (
