@@ -50,7 +50,7 @@ export async function initDb() {
     )
   `);
 
-  // default admin password
+  // default admin configs
   await db.execute(`
     INSERT OR IGNORE INTO admin_settings (key, value) VALUES ('admin_password', '${process.env.SECRET_KEY}')
   `);
