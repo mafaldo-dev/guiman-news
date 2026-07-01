@@ -58,10 +58,20 @@ export function NewsFeed() {
 
   async function handleFetchRSS() {
     setFetching(true);
-    await fetch("/api/fetch-news?secret=guiman2024");
+    await fetch(`/api/fetch-news?secret=${process.env.SECRET_KEY}`);
     await fetchNews(1, true);
     setFetching(false);
   }
+
+  useEffect(() => {
+    handleFetchRSS(); 
+
+    const interval = setInterval(() => {
+      handleFetchRSS();
+    }, 60000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const featured = articles[0];
   const rest = articles.slice(1);
