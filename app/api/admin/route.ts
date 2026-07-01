@@ -7,7 +7,7 @@ export async function GET(request: Request) {
   const secret = searchParams.get("secret");
 
   const pwRow = await db.execute("SELECT value FROM admin_settings WHERE key = 'admin_password'");
-  const pw = pwRow.rows[0]?.value as string || "guiman2024";
+  const pw = pwRow.rows[0]?.value as string;
   if (secret !== pw) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const action = searchParams.get("action") || "stats";
